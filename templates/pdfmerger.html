@@ -1,28 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Projects</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="style1.css">
-</head>
-<body>
-
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  		<a class="navbar-brand" href="practice.html">Welcome</a>
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-  		</button>
-	  	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		    <div class="navbar-nav">
-		      <a class="nav-item nav-link" href="practice.html">Home<span class="sr-only">(current)</span></a>	
-		      <a class="nav-item nav-link" href="jpg2png.html">JPG2PNG</a>
-		      <a class="nav-item nav-link active" href="pdfmerger.html">PDF Merger</a>
-		      <a class="nav-item nav-link" href="passwordcheck.html">Password Check</a>
-		    </div>
-	  	</div>
-	</nav>
-
+{% extends "layout.html" %}
+{% block highlight%}
+	  <a class="nav-item nav-link" href="/">Home</a>	
+	  <a class="nav-item nav-link" href="/jpg2png">JPG2PNG</a>
+	  <a class="nav-item nav-link active" href="/pdfmerger">PDF Merger</a>
+	  <a class="nav-item nav-link" href="/passwordcheck">Password Check</a>
+{% endblock highlight %}
+{% block content %}
 	<div class="container">  
 	  <div class="row align-items-center">
 	    <div class="col">
@@ -35,18 +18,11 @@
 	    </div>
 	    <div class="col-md-auto">
 	    	<label for="">Please upload your file here</label>
-	    	<form method="POST" enctype="multipart/form-data" action="/upload" style="display: flex;align-items: center;justify-content: center;">
+	    	<form method="POST" enctype="multipart/form-data" action="" style="display: flex;align-items: center;justify-content: center;">
 			  <input type="file" name="file[]" multiple="" class="form-control-file">
 			  <input type="submit" value="Submit" class="btn btn-dark">
 			</form>
-	      	<!-- <form method="post" action="pdfmerger.html/submitted">
-			  <div class="form-group">
-			    <label for="exampleFormControlFile1">Please upload your file here</label>
-			    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file"webkitdirectory directory multiple>
-			  </div>
-			<button type="button" class="btn btn-dark">Submit</button>
-			</form> -->
-	    </div>
+		</div>
 		    <div class="col">
 		    	<h5 class="rainbow">{{message}}</h5>
 		    	<div class="card" style="width: 49rem;">
@@ -54,7 +30,7 @@
 				    <h5 class="card-title">Converted file</h5>
 				    <p class="card-text">Here you'll recieve your converted file. Please click on download to 
 				    get the PDF in your system.</p>
-				    <a href="/combinedpdf" class="btn btn-primary" >Download PDF</a>
+				    <a target="_blank" href="{{ url_for('combinedpdf') }}" class="btn btn-primary">Download PDF</a>
 				  </div>
 				</div>
 			</div>
@@ -64,25 +40,4 @@
 	  	</div>
 	</div>
 
-	<div class="container">
-	<div class="container footer navbar-fixed-bottom">
-	<footer>
-	    <a target="_blank" href="https://github.com/agarwalsahil2013/ImagePrediction.git"><i class="fab fa-github fa-lg contact-icon"></i></a>
-	    <a target="_blank" href="https://www.linkedin.com/in/sahil-agarwal-/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a><br/>
-	    © Made by Sahil Agarwal
-	</footer>
-	</div>
-	</div>
-
-	
-	
-
-
-
- 	<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content %}

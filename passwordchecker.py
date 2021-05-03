@@ -23,14 +23,16 @@ def pwned_api_check(password):
 
 def read_file(password=None, file_loc=None):
   if file_loc:
+    pass_list = []
     f = open(file_loc, "r")
     for password in f.read().split():
       count = pwned_api_check(password)
       if count:
-        return f"Your {'*'*len(password)} was found {count} times...It's risky to use :("
+        pass_list.append(f"Your {'*'*len(password)} was found {count} times...It's risky to use :(")
       else:
-        return f"Your {'*'*len(password)} was NOT FOUND. That's amazing. Congratulations... :)"
+        pass_list.append(f"Your {'*'*len(password)} was NOT FOUND. That's amazing. Congratulations... :)")
     f.close()
+    return pass_list
   else:
     count = pwned_api_check(password)
     if count:

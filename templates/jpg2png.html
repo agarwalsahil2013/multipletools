@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Projects</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style1.css">
-	<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block highlight%}
+	  <a class="nav-item nav-link" href="/">Home</a>	
+	  <a class="nav-item nav-link active" href="/jpg2png">JPG2PNG</a>
+	  <a class="nav-item nav-link" href="/pdfmerger">PDF Merger</a>
+	  <a class="nav-item nav-link" href="/passwordcheck">Password Check</a>
+{% endblock highlight %}
+{% block content %}
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  		<a class="navbar-brand" href="practice.html">Welcome</a>
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-  		</button>
-	  	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		    <div class="navbar-nav">
-		      <a class="nav-item nav-link" href="practice.html">Home<span class="sr-only">(current)</span></a>	
-		      <a class="nav-item nav-link active" href="jpg2png.html">JPG2PNG</a>
-		      <a class="nav-item nav-link" href="pdfmerger.html">PDF Merger</a>
-		      <a class="nav-item nav-link" href="passwordcheck.html">Password Check</a>
-		    </div>
-	  	</div>
-	</nav>
-
-	<div class="jumbotron jumbotron-fluid">
+	<div class="jumbotron jumbotron-fluid" style="padding-top: 4px;padding-bottom: 4px;">
   		<div class="container">
     		<h1 class="display-4">Introduction</h1>
     		<p class="lead">Hello, this page helps user to convert JPG file to PNG file. We do not store any images in our databases. So, you can upload care free and convert it really fast. I hope you'll like my projects.</p>
@@ -46,32 +30,15 @@
 
 	  		<div class="col-sm bg-light" style="display: flex;flex-direction:column;align-items:center;justify-content: center;" thumbnail>
 	  			<label>Image will be visible here</label>
-	  			<img src="{{url_for('static', filename = unn)}}" alt=" " width="300px" height="300px">
+	  			<img src="{{url_for('static', filename = unn)}}" alt=" " width="300px" height="250px">
 	  		</div>
 
 	  		<div class="col-sm" style="text-align: right;">
 	  			<h5 class="rainbow">{{message}}</h5>
 	  			<label for="" >View your converted file here</label><br/>
-	  			<a href="/downloadpng" class="btn btn-outline-dark" >Download Image</a>
+	  			<a href="{{ url_for('static', filename=unn) }}" class="btn btn-outline-dark" download>Download Image</a>
 	  		</div>
 		</div>
 	</div>
 
-	<div class="container">
-	<div class="container footer navbar-fixed-bottom">
-	<footer>
-	    <a target="_blank" href="https://github.com/agarwalsahil2013/ImagePrediction.git"><i class="fab fa-github fa-lg contact-icon"></i></a>
-	    <a target="_blank" href="https://www.linkedin.com/in/sahil-agarwal-/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a><br/>
-	    © Made by Sahil Agarwal
-	</footer>
-	</div>
-	</div>
-
-
- 	<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content%}
