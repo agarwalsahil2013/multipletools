@@ -9,7 +9,7 @@ This is the web app for anyone who is willing to convert their image from JPG to
 ## Deployed Model on Heroku
 You can test the model on **Heroku** from this [**link**](http://multiplefunc.herokuapp.com/). It's really nice to use your own tools to convert images and merging multiple PDFs. I have tried to make this website as simple as possible. Below steps will navigate you to use this application.
 
-<img src="https://github.com/agarwalsahil2013/Case_status_check/blob/main/Images/Case_Status_Project_Overview.gif" />
+<img src="media/multipletools.gif" />
 
 ## Recommendation
 Feel free to reach out to me for any questions or suggestions. You can find me on <a href="https://www.linkedin.com/in/sahil-agarwal-"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" width="20" height="20" /></a>. For more projects, you can visit over here.<a href="https://github.com/agarwalsahil2013"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width="20" height="20" /></a>
